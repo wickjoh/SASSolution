@@ -21,5 +21,10 @@ namespace Constants
     
     constexpr int SAS_SUCCESS = 0;
     constexpr int SAS_FAILURE = 1;
+
+    //TO DO : Impl Condif file to strore all configuration level parameters
+    constexpr std::size_t DEFAULT_BUCKET_COUNT      = 101U;
+    constexpr std::size_t DEFAULT_QUEUE_CAPACITY    = 1024U;
+    constexpr std::size_t DATA_BLOCK_SIZE           = 4096U;
 }
 #endif
