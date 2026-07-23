@@ -60,6 +60,7 @@ bool DateTimeValidator::validateLength(const String& dateTime) const
 {
     std::size_t length = dateTime.getLength();
 
+    //TO DO : Implement Length formater or constant to remove Hard Coded values 
     if ((length != 20U) &&
         (length != 25U))
     {

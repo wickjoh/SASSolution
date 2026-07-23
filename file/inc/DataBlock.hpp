@@ -39,7 +39,7 @@ class DataBlock
         explicit DataBlock(std::size_t capacity);
         DataBlock(const DataBlock &other);
         DataBlock(DataBlock &&other) noexcept;
-
+ 
         ~DataBlock();
 
         DataBlock& operator=(const DataBlock &other);

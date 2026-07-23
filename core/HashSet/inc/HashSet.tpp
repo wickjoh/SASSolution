@@ -132,6 +132,8 @@ template<typename HST>
 bool HashSet<HST>::insert(const HST& value)
 {
     std::size_t index = hashIndex(value);
+    
+    std::lock_guard<std::mutex> guard(bucketMutexes[index]);
     if(m_p_bucket[index].contains(value))
     {
         return false;

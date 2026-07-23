@@ -14,6 +14,7 @@
 #define HASHSET_HPP
 
 #include <cstddef>
+#include <mutex>
 
 #include "Constant.hpp"
 #include "SinglyLinkedList.hpp"
@@ -28,6 +29,7 @@ class HashSet
         std::size_t             m_size;
 
         std::size_t hashIndex(const HST& value) const;
+        std::mutex* bucketMutexes;
 
     public:
 

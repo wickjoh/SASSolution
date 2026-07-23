@@ -51,6 +51,6 @@ class RingQueue
         void clear();
 };
 
-#include "RingQueue.tpp";
+#include "RingQueue.tpp"
 
 #endif

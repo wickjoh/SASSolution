@@ -54,6 +54,6 @@ class SinglyLinkedList
         bool contains(const SLLT& value) const;
 };
 
-#include "SinglyLinkedList.tpp";
+#include "SinglyLinkedList.tpp"
 
 #endif

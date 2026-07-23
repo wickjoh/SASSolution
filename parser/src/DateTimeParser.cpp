@@ -25,25 +25,28 @@ bool DateTimeParser::getNextRecord(const DataBlock& dataBlock,
                                    std::size_t& currentIndex,
                                    String& record)
 {
-    bool result = true;
+    bool result = false;
 
     do 
     {
-        if (!readLine(dataBlock, currentIndex))
+        /*FiX_Issue_1_S*/
+        while (readLine(dataBlock, currentIndex))
         {
-            result = false;
-            break;
-        }
-        trimLine();
-        if (isLineEmpty())
-        {
-            result = getNextRecord(dataBlock, currentIndex, record);
-            break;
-        }
+            trimLine();
+            
+            if (isLineEmpty())
+            {
+                continue;
+            }
 
-        record = String(m_record_buffer);
+            record = String(m_record_buffer);
+            result = true;
+            break;
+        }
+        /*FiX_Issue_1_E*/
 
     }while(Constants::ZERO);
+
     return result;
 }
 
